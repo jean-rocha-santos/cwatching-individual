@@ -68,6 +68,8 @@ public class MainCW {
                 Thread.sleep(400);
 
                 // Registra a sessão criada ao logar
+
+
                 sessaoDAO.registrarSessao(maquina.getIdMaquina(), usuario.getIdUsuario());
                 Sessao sessaoAtual = sessaoDAO.buscarUltimaSessaoPorMaquina(maquina.getIdMaquina());
 
@@ -91,6 +93,8 @@ public class MainCW {
                 ));
 
                 Alerta alerta = new Alerta(parametroAlertaAtual);
+                LimparVolume limparVolume = new LimparVolume();
+                limparVolume.iniciarLimpezaVolume();
 
                 // Inicializa timer para coleta de dados de CPU e RAM
                 Timer atualizarRegistro = new Timer();
